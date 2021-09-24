@@ -9,7 +9,7 @@
 `Final Valid Accuracy for Class Dog` : 87.5%
 
 
-![](images\emlo-v1.png)
+![](images/emlo-v1.png)
 
 
 ## tag v2.0
@@ -21,4 +21,4 @@
 `Final Valid Accuracy for Class Dog` : 92.7%
 
 
-![](images\emlo-v2.png)
+![](images/emlo-v2.png)
