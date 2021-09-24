@@ -42,7 +42,6 @@ def extract_features(save=False):
 
     full_model = models.vgg16(pretrained=True)
     model = nn.Sequential(*nn.ModuleList([full_model.features, full_model.avgpool]))
-    print(model)
     model.to(config.DEVICE)
     del full_model
 
