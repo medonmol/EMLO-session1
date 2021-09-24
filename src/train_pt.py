@@ -48,10 +48,10 @@ def extract_features(save=False):
     train_features = get_features_from_images(model, trainloader)
     valid_features = get_features_from_images(model, validloader)
     if save:
-        np.save(open("bottleneck_features_train.npy", "wb"), train_features)
-        np.save(open("bottleneck_features_valid.npy", "wb"), valid_features)
-        np.save(open("train_labels.npy", "wb"), train_labels)
-        np.save(open("valid_labels.npy", "wb"), valid_labels)
+        np.save(open(config.TRAIN_FEATURES, "wb"), train_features)
+        np.save(open(config.VALID_FEATURES, "wb"), valid_features)
+        np.save(open(config.TRAIN_LABELS, "wb"), train_labels)
+        np.save(open(config.VALID_LABELS, "wb"), valid_labels)
     return train_features, valid_features, train_labels, valid_labels
 
 
@@ -228,9 +228,9 @@ class Trial:
 
 if __name__ == "__main__":
     # extract_features(True)
-    # tf, vf, tl, vl = extract_features()
-    # assert len(tf) == len(tl)
-    # assert len(vf) == len(vl)
+    tf, vf, tl, vl = extract_features(True)
+    assert len(tf) == len(tl)
+    assert len(vf) == len(vl)
 
     model = DogNotDog().to(config.DEVICE)
     criterion = nn.functional.nll_loss
